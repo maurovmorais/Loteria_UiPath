@@ -594,9 +594,9 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="464,1067" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="464,1098" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                               <State.Entry>
-                                <Sequence sap:VirtualizedContainerService.HintSize="418,923" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                <Sequence sap:VirtualizedContainerService.HintSize="418,954" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -645,7 +645,7 @@
                                       </Catch>
                                     </TryCatch.Catches>
                                   </TryCatch>
-                                  <Sequence DisplayName="Envia Email" sap:VirtualizedContainerService.HintSize="376,740" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                  <Sequence DisplayName="Envia Email" sap:VirtualizedContainerService.HintSize="376,771" sap2010:WorkflowViewState.IdRef="Sequence_33">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -668,8 +668,14 @@
                                       </Assign.Value>
                                     </Assign>
                                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;Enviei email&quot;]" />
-                                    <ui:AppendLine DisplayName="Salava arquivo" FileName="C:\Users\mauro\OneDrive\Área de Trabalho\loteria.txt" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[&quot;Números Sorteados no dia &quot;+var_strDataSorteio+vbcrlf+String.Join(vbcrlf,var_lstTodosNum)]" UseDefaultEncoding="False" />
-                                    <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="maurovmorais@gmail.com" Body="[&quot;Números Sorteados no dia &quot;+var_strDataSorteio+vbcrlf+String.Join(vbcrlf,var_lstTodosNum)]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" IsBodyHtml="False" IsDraft="False" Subject="Números Loteria" To="maurovmorais@gmail.com">
+                                    <ui:AppendLine sap2010:Annotation.AnnotationText="Salvar o arquivo na area de trabalho." DisplayName="Salvar arquivo" FileName="[Config(&quot;LocalSalvamento&quot;).ToString]" sap:VirtualizedContainerService.HintSize="334,163" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[&quot;Números Sorteados no dia &quot;+var_strDataSorteio+vbcrlf+String.Join(vbcrlf,var_lstTodosNum)]" UseDefaultEncoding="False">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:AppendLine>
+                                    <ui:SendOutlookMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Account="maurovmorais@gmail.com" Body="[&quot;Números Sorteados no dia &quot;+var_strDataSorteio+vbcrlf+String.Join(vbcrlf,var_lstTodosNum)]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" IsBodyHtml="False" IsDraft="False" Subject="Números Loteria" To="[Config(&quot;Email&quot;).ToString]">
                                       <ui:SendOutlookMail.Files>
                                         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                                       </ui:SendOutlookMail.Files>
