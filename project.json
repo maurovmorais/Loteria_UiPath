@@ -3,10 +3,10 @@
   "description": "Faz o sorteio dos números da Megasena",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.9.3-beta.1172659]",
+    "UiPath.Excel.Activities": "[2.9.3]",
     "UiPath.Mail.Activities": "[1.9.3]",
-    "UiPath.System.Activities": "[20.10.1-beta.1178848]",
-    "UiPath.UIAutomation.Activities": "[20.10.3-preview]"
+    "UiPath.System.Activities": "[20.10.1]",
+    "UiPath.UIAutomation.Activities": "[20.10.6]"
   },
   "webServices": [],
   "entitiesStores": [],
